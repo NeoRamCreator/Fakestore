@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useEffect, useState } from "react";
+import Main from "./pages/Main";
+
+
+
+import {
+  createHashRouter,
+  RouterProvider
+  
+} from "react-router-dom";
+
+import routes from "./routes";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [route, setRoute] = useState(null);
+
+
+  useEffect(() => {
+    setRoute(createHashRouter(routes))
+  }, [])
+
+  if (route) {
+    return <RouterProvider router={route} />
+
+  } else {
+    return (<h1>Роут не грузит</h1>);
+  }
+
 }
 
 export default App;
