@@ -2,7 +2,7 @@
 ## DEMO https://neoramcreator.github.io/Fakestore-Demo/
 ## Развернуть приложение 
 ### git clone https://github.com/NeoRamCreator/Fakestore
-### npm i --force
+### npm i 
 ### npm start
 
 ## Задание 
